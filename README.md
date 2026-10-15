@@ -11,7 +11,7 @@
 Pumpkin Spice pairs a deep espresso frame with a cinnamon-brown toolbar, then opens onto a soft cream New Tab Page warmed by oat and pumpkin accents. Cream ink keeps every tab, bookmark and toolbar icon crisp against the dark chrome, espresso text keeps the pale page readable, links take a burnt-pumpkin tone, and a single-row shortcut layout with a color-matched Google logo keeps the New Tab Page clean.
 
 <p align="center">
-  <img src="store-assets/promo/1400x560.png" alt="Pumpkin Spice Theme promo" width="700">
+  <img src="store-assets/promo/1400x560.png?v=2" alt="Pumpkin Spice Theme promo" width="700">
 </p>
 
 ## Design Concept
@@ -41,11 +41,11 @@ Pumpkin Spice is built from a classic autumn moodboard palette: espresso brown, 
 ## Preview
 
 <p align="center">
-  <img src="store-assets/screenshots/en/screenshot-1-browser.png" alt="Pumpkin Spice New Tab preview" width="640">
+  <img src="store-assets/screenshots/en/screenshot-1-browser.png?v=2" alt="Pumpkin Spice New Tab preview" width="640">
 </p>
 
 <p align="center">
-  <img src="store-assets/screenshots/en/screenshot-2-palette.png" alt="Pumpkin Spice palette" width="640">
+  <img src="store-assets/screenshots/en/screenshot-2-palette.png?v=2" alt="Pumpkin Spice palette" width="640">
 </p>
 
 ## Installation
