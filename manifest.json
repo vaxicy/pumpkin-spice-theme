@@ -20,7 +20,7 @@
       "button_background":            [233, 210, 168],
       "button_background_secondary":  [240, 227, 200],
       "omnibox_background":           [247, 242, 231],
-      "omnibox_text":                 [58, 42, 33],
+      "omnibox_text":                 [245, 239, 226],
       "toolbar_button_icon":          [245, 239, 226]
     },
     "properties": {

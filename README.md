@@ -58,7 +58,7 @@ Upload the resulting `.zip` to the Chrome Web Store developer dashboard.
 |---|---|
 | `manifest.json` | Theme definition (single-file, inlined `theme` field) |
 | `logo/logo.png` | 128×128 store icon (transparent background) |
-| `scripts/generate-logo-candidates.py` | Draw all logo candidates + contact sheets, and export `logo/logo.png` from the `SELECTED` candidate |
+| `scripts/generate-logo-vector.py` | Render all SVG logo candidates with headless Chromium, build the contact sheets, and export `logo/logo.png` from the `SELECTED` candidate |
 | `logo/candidates/` | Candidate previews and light/dark contact sheets |
 | `LICENSE` | Non-Commercial License (English / 中文) |
 
