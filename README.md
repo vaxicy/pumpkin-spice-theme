@@ -8,7 +8,11 @@
   A cozy autumn Chrome theme in espresso, cinnamon, cream and pumpkin tones — the warm colours of a spiced latte on a knitted blanket.
 </p>
 
-Pumpkin Spice pairs a deep espresso frame with a cinnamon-brown toolbar, then opens onto a soft cream New Tab Page warmed by oat and pumpkin accents. Espresso ink keeps every tab, bookmark, and icon crisp against the pale surfaces, links take a burnt-pumpkin tone, and a single-row shortcut layout with a color-matched Google logo keeps the page clean.
+Pumpkin Spice pairs a deep espresso frame with a cinnamon-brown toolbar, then opens onto a soft cream New Tab Page warmed by oat and pumpkin accents. Cream ink keeps every tab, bookmark and toolbar icon crisp against the dark chrome, espresso text keeps the pale page readable, links take a burnt-pumpkin tone, and a single-row shortcut layout with a color-matched Google logo keeps the New Tab Page clean.
+
+<p align="center">
+  <img src="store-assets/promo/1400x560.png" alt="Pumpkin Spice Theme promo" width="700">
+</p>
 
 ## Design Concept
 
@@ -34,6 +38,16 @@ Pumpkin Spice is built from a classic autumn moodboard palette: espresso brown, 
 - Single-row shortcut row and a color-matched Google logo for a clean New Tab Page
 - No configuration needed — install and enjoy
 
+## Preview
+
+<p align="center">
+  <img src="store-assets/screenshots/en/screenshot-1-browser.png" alt="Pumpkin Spice New Tab preview" width="640">
+</p>
+
+<p align="center">
+  <img src="store-assets/screenshots/en/screenshot-2-palette.png" alt="Pumpkin Spice palette" width="640">
+</p>
+
 ## Installation
 
 ### Load Unpacked (Development)
@@ -58,7 +72,15 @@ Upload the resulting `.zip` to the Chrome Web Store developer dashboard.
 |---|---|
 | `manifest.json` | Theme definition (single-file, inlined `theme` field) |
 | `logo/logo.png` | 128×128 store icon (transparent background) |
+| `store-assets/promo/440x280.png` | Small promo tile |
+| `store-assets/promo/1400x560.png` | Marquee promo tile |
+| `store-assets/screenshots/en/screenshot-1-browser.png` | Browser mockup screenshot (1280×800) |
+| `store-assets/screenshots/en/screenshot-2-palette.png` | Palette introduction screenshot (1280×800) |
+| `store-assets/store-description.txt` | Store listing description |
 | `scripts/generate-logo-vector.py` | Render all SVG logo candidates with headless Chromium, build the contact sheets, and export `logo/logo.png` from the `SELECTED` candidate |
+| `scripts/generate-screenshot-headless.py` | Regenerate the browser mockup via Playwright |
+| `scripts/generate-screenshot-2-palette.py` | Regenerate the palette screenshot |
+| `scripts/generate-promo.py` | Regenerate both promo tiles |
 | `logo/candidates/` | Candidate previews and light/dark contact sheets |
 | `LICENSE` | Non-Commercial License (English / 中文) |
 

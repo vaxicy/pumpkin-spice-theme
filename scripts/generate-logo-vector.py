@@ -28,7 +28,7 @@ os.chdir(str(ROOT))                      # relative paths only (non-ASCII path s
 SIZE = 128
 CELL = 512                               # rendered cell (2x of the 256 preview)
 PREVIEW = 256
-SELECTED = "01"
+SELECTED = "06"
 CAND_DIR = Path("logo/candidates")
 LOGO_OUT = Path("logo/logo.png")
 
