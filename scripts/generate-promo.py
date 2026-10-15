@@ -8,6 +8,7 @@ overflow fails loudly at generation time.
 """
 import json
 import os
+import time
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
@@ -16,6 +17,23 @@ ROOT = Path(__file__).resolve().parent.parent
 os.chdir(str(ROOT))                      # relative paths only (non-ASCII path safety)
 
 OUT_DIR = "store-assets/promo"
+
+
+def save_png(img, path, tries=5):
+    """PIL intermittently raises OSError [Errno 22] on this non-ASCII project path.
+
+    Observed on Windows: the very same save() succeeds on one run and fails on the
+    next, so retry a few times instead of crashing the whole generation.
+    """
+    last = None
+    for i in range(tries):
+        try:
+            img.save(path)
+            return
+        except OSError as exc:            # pragma: no cover - environment specific
+            last = exc
+            time.sleep(0.35 * (i + 1))
+    raise last
 
 
 def rgb(vals):
@@ -76,8 +94,8 @@ def compose(size, geom, colors):
     bx, by = RIGHT - bars_w, geom["bar_y"]
     for i, col in enumerate(bar_colors):
         x0 = bx + i * (bw + bgap)
-        d.rounded_rectangle([x0, by, x0 + bw, by + geom["bar_h"]], radius=bw // 3,
-                            fill=col, outline=lerp(col, ink, 0.22), width=2)
+        # no outline: the bars read as flat paint chips (user request 2026-10-16)
+        d.rounded_rectangle([x0, by, x0 + bw, by + geom["bar_h"]], radius=bw // 3, fill=col)
     assert bx + bars_w <= RIGHT, "palette bars overflow the right margin"
 
     lsize = geom["logo"]
@@ -145,7 +163,7 @@ def main():
     for size, geom in (((1400, 560), LARGE), ((440, 280), SMALL)):
         img, boxes = compose(size, geom, c)
         out = "%s/%dx%d.png" % (OUT_DIR, size[0], size[1])
-        img.save(out)
+        save_png(img, out)
         print("saved:", out, img.size, img.mode, "cta:", boxes["btn"], "bars:", boxes["bars"])
 
 

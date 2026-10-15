@@ -8,12 +8,26 @@ from manifest.json; the sheet is re-drawn from scratch on every run.
 """
 import json
 import os
+import time
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parent.parent
 os.chdir(str(ROOT))                      # relative paths only (non-ASCII path safety)
+
+
+def save_png(img, path, tries=5):
+    """PIL intermittently raises OSError [Errno 22] on this non-ASCII project path."""
+    last = None
+    for i in range(tries):
+        try:
+            img.save(path)
+            return
+        except OSError as exc:            # pragma: no cover - environment specific
+            last = exc
+            time.sleep(0.35 * (i + 1))
+    raise last
 
 OUT = "store-assets/screenshots/en/screenshot-2-palette.png"
 W, H = 1280, 800
@@ -109,7 +123,7 @@ def main():
     assert chip_y + 44 <= H - 12, "footer chips too close to the canvas bottom"
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    img.save(OUT)
+    save_png(img, OUT)
     print("saved:", OUT, img.size, img.mode, "| last swatch right:", last_right)
 
 
