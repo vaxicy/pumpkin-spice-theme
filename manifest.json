@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Pumpkin Spice Theme",
+  "version": "1.0.0",
+  "description": "A cozy autumn Chrome theme in espresso, cinnamon, cream and pumpkin tones — warm, calm, and easy on the eyes.",
+  "icons": {
+    "128": "logo/logo.png"
+  },
+  "theme": {
+    "colors": {
+      "frame":                        [58, 42, 33],
+      "frame_inactive":               [74, 56, 44],
+      "toolbar":                      [107, 74, 51],
+      "tab_text":                     [245, 239, 226],
+      "bookmark_text":                [245, 239, 226],
+      "ntp_background":               [244, 238, 226],
+      "ntp_text":                     [58, 42, 33],
+      "ntp_link":                     [160, 82, 27],
+      "ntp_header":                   [233, 210, 168],
+      "button_background":            [233, 210, 168],
+      "button_background_secondary":  [240, 227, 200],
+      "omnibox_background":           [247, 242, 231],
+      "omnibox_text":                 [58, 42, 33],
+      "toolbar_button_icon":          [245, 239, 226]
+    },
+    "properties": {
+      "ntp_button_background":    [223, 138, 59],
+      "ntp_button_hover":         [196, 112, 42],
+      "ntp_logo_alternate":       1,
+      "ntp_single_row_shortcuts": true
+    },
+    "color_scheme": "light",
+    "default_color_scheme": "light"
+  }
+}
